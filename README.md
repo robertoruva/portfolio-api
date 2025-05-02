@@ -51,29 +51,43 @@ cp .env.example .env
 # Agrega tu clave en el archivo .env
 OPENWEATHER_API_KEY=tu_api_key_aqui
 ```
-##
-📑 Documentación Swagger
-Una vez arrancado el proyecto, accede a:
-http://localhost/api/documentation
+## 📑 Documentación Swagger
 
-Ahí encontrarás toda la documentación generada con Swagger/OpenAPI para probar los endpoints directamente.
+Una vez arrancado el proyecto, accede a:
+
+👉 [`http://localhost/api/documentation`](http://localhost/api/documentation)
+
+Ahí encontrarás toda la documentación generada con Swagger/OpenAPI para probar los endpoints directamente desde el navegador.
+
+
+## 🧪 Endpoints principales
+
+### 🌤 OpenWeatherMap - REST API
+
+```bash
+GET /api/openweather?city=Paris
+```
+
+### 🧴 CountryInfo - SOAP API
+
+```bash
+GET /api/soap/country-info?iso=FR
+```
+
+### 📡 Clima simulado - WebSocket
+
+```bash
+GET /api/websocket/weather
+```
+
+## 🧾 Licencia
+
+MIT – Puedes usar este código libremente con fines educativos o profesionales.
 
 ---
 
-🧪 Endpoints principales
-🌤 OpenWeatherMap - REST API
-GET /api/openweather?city=Paris
+## 🤝 Autor
 
-🧴 CountryInfo - SOAP API
-GET /api/soap/country-info?iso=FR
-
-📡 Clima simulado - WebSocket
-GET /api/websocket/weather
-
-🧾 Licencia
-MIT - Puedes usar este código libremente con fines educativos o profesionales.
-
-🤝 Autor
-Roberto Ruiz Vazquez
-Desarrollador Backend | Laravel | PHP | APIs
-https://www.linkedin.com/in/robertoruizvazquez/ • Portfolio
+**Roberto Ruiz Vázquez**  
+Desarrollador Backend | Laravel | PHP | APIs  
+[🔗 LinkedIn](https://www.linkedin.com/in/robertoruizvazquez/)
