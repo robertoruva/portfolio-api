@@ -35,9 +35,27 @@ Incluye consumo de servicios REST, SOAP y WebSocket relacionados con el clima, i
 
 ---
 
+## ⚙️ Instalación con Sail
+
+```bash
+git clone https://github.com/tuusuario/portfolio-clima.git
+cd portfolio-clima
+
+# Instalación inicial
+cp .env.example .env
+./vendor/bin/sail up -d
+./vendor/bin/sail composer install
+./vendor/bin/sail artisan key:generate
+
+# Si usas OpenWeatherMap:
+# Agrega tu clave en el archivo .env
+OPENWEATHER_API_KEY=tu_api_key_aqui
+```
+##
 📑 Documentación Swagger
 Una vez arrancado el proyecto, accede a:
 http://localhost/api/documentation
+
 Ahí encontrarás toda la documentación generada con Swagger/OpenAPI para probar los endpoints directamente.
 
 ---
@@ -59,21 +77,3 @@ MIT - Puedes usar este código libremente con fines educativos o profesionales.
 Roberto Ruiz Vazquez
 Desarrollador Backend | Laravel | PHP | APIs
 https://www.linkedin.com/in/robertoruizvazquez/ • Portfolio
-
-## ⚙️ Instalación con Sail
-
-```bash
-git clone https://github.com/tuusuario/portfolio-clima.git
-cd portfolio-clima
-
-# Instalación inicial
-cp .env.example .env
-./vendor/bin/sail up -d
-./vendor/bin/sail composer install
-./vendor/bin/sail artisan key:generate
-
-# Si usas OpenWeatherMap:
-# Agrega tu clave en el archivo .env
-OPENWEATHER_API_KEY=tu_api_key_aqui
-
-
