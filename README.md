@@ -35,6 +35,31 @@ Incluye consumo de servicios REST, SOAP y WebSocket relacionados con el clima, i
 
 ---
 
+📑 Documentación Swagger
+Una vez arrancado el proyecto, accede a:
+http://localhost/api/documentation
+Ahí encontrarás toda la documentación generada con Swagger/OpenAPI para probar los endpoints directamente.
+
+---
+
+🧪 Endpoints principales
+🌤 OpenWeatherMap - REST API
+GET /api/openweather?city=Paris
+
+🧴 CountryInfo - SOAP API
+GET /api/soap/country-info?iso=FR
+
+📡 Clima simulado - WebSocket
+GET /api/websocket/weather
+
+🧾 Licencia
+MIT - Puedes usar este código libremente con fines educativos o profesionales.
+
+🤝 Autor
+Roberto Ruiz Vazquez
+Desarrollador Backend | Laravel | PHP | APIs
+https://www.linkedin.com/in/robertoruizvazquez/ • Portfolio
+
 ## ⚙️ Instalación con Sail
 
 ```bash
@@ -51,26 +76,4 @@ cp .env.example .env
 # Agrega tu clave en el archivo .env
 OPENWEATHER_API_KEY=tu_api_key_aqui
 
-📑 Documentación Swagger
-Una vez arrancado el proyecto, accede a:
-http://localhost/api/documentation
-Ahí encontrarás toda la documentación generada con Swagger/OpenAPI para probar los endpoints directamente.
 
-🧪 Endpoints principales
-🌤 OpenWeatherMap - REST API
-GET /api/openweather?city=Paris
-
-🧴 CountryInfo - SOAP API
-GET /api/soap/country-info?iso=FR
-
-📡 Clima simulado - WebSocket
-GET /api/websocket/weather
-
-🧾 Licencia
-MIT - Puedes usar este código libremente con fines educativos o profesionales.
-
-
-🤝 Autor
-Roberto Ruiz Vazquez
-Desarrollador Backend | Laravel | PHP | APIs
-https://www.linkedin.com/in/robertoruizvazquez/ • Portfolio
