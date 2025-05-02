@@ -1,0 +1,170 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Portfolio de Clima",
+        "description": "Mini proyectos de consumo de servicios de clima vía REST, SOAP y WebSocket en Laravel.",
+        "contact": {
+            "name": "Tu Nombre",
+            "email": "tu.email@ejemplo.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://my-default-host.com",
+            "description": "Servidor principal"
+        }
+    ],
+    "paths": {
+        "/api/soap/country-info": {
+            "get": {
+                "tags": [
+                    "CountryInfo - SOAP"
+                ],
+                "summary": "Obtener información de un país vía SOAP",
+                "operationId": "617fbfed50cedd21d2e8df57f1220a75",
+                "parameters": [
+                    {
+                        "name": "iso",
+                        "in": "query",
+                        "description": "Código ISO del país (ej: ES)",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "ES"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Datos del país",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Spain"
+                                        },
+                                        "capital": {
+                                            "type": "string",
+                                            "example": "Madrid"
+                                        },
+                                        "currency": {
+                                            "type": "string",
+                                            "example": "EUR"
+                                        },
+                                        "flag": {
+                                            "type": "string",
+                                            "example": "http://.../Spain.jpg"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/openweather": {
+            "get": {
+                "tags": [
+                    "Clima - OpenWeatherMap"
+                ],
+                "summary": "Obtener el clima actual de una ciudad (OpenWeatherMap)",
+                "operationId": "808061fc5f24012297a783ba390ce98b",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "Nombre de la ciudad",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "Lima"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Datos del clima",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "city": {
+                                            "type": "string",
+                                            "example": "Lima"
+                                        },
+                                        "temperature": {
+                                            "type": "number",
+                                            "example": 25.1
+                                        },
+                                        "humidity": {
+                                            "type": "integer",
+                                            "example": 70
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error al obtener el clima"
+                    }
+                }
+            }
+        },
+        "/api/websocket/weather": {
+            "get": {
+                "tags": [
+                    "Clima - WebSocket Simulado"
+                ],
+                "summary": "Obtener clima simulado por WebSocket",
+                "operationId": "a725d5686e4aea24dae36d96ec44be9d",
+                "responses": {
+                    "200": {
+                        "description": "Clima simulado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "temperature": {
+                                            "type": "number",
+                                            "example": 23.5
+                                        },
+                                        "humidity": {
+                                            "type": "integer",
+                                            "example": 62
+                                        },
+                                        "location": {
+                                            "type": "string",
+                                            "example": "Madrid"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "CountryInfo - SOAP",
+            "description": "CountryInfo - SOAP"
+        },
+        {
+            "name": "Clima - OpenWeatherMap",
+            "description": "Clima - OpenWeatherMap"
+        },
+        {
+            "name": "Clima - WebSocket Simulado",
+            "description": "Clima - WebSocket Simulado"
+        }
+    ]
+}

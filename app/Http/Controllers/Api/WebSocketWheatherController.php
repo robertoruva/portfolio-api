@@ -11,6 +11,22 @@ class WebSocketWheatherController extends Controller {
         protected WebSocketWeatherService $service
     ) {}
 
+    /**
+     * @OA\Get(
+     *     path="/api/websocket/weather",
+     *     summary="Obtener clima simulado por WebSocket",
+     *     tags={"Clima - WebSocket Simulado"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Clima simulado",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="temperature", type="number", example=23.5),
+     *             @OA\Property(property="humidity", type="integer", example=62),
+     *             @OA\Property(property="location", type="string", example="Madrid")
+     *         )
+     *     )
+     * )
+     */
     public function index(): JsonResponse {
         try {
             $weather = $this->service->getCurrentWeather();

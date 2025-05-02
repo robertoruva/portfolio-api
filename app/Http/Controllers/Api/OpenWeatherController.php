@@ -13,6 +13,34 @@ class OpenWeatherController extends Controller
         protected OpenWeatherService $service
     ) {}
 
+    /**
+     * @OA\Get(
+     *     path="/api/openweather",
+     *     summary="Obtener el clima actual de una ciudad (OpenWeatherMap)",
+     *     tags={"Clima - OpenWeatherMap"},
+     *     @OA\Parameter(
+     *         name="city",
+     *         in="query",
+     *         description="Nombre de la ciudad",
+     *         required=false,
+     *         @OA\Schema(type="string", example="Lima")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Datos del clima",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="city", type="string", example="Lima"),
+     *             @OA\Property(property="temperature", type="number", example=25.1),
+     *             @OA\Property(property="humidity", type="integer", example=70)
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Error al obtener el clima"
+     *     )
+     * )
+     */
+
     public function getCurrentWeather(Request $request): JsonResponse
     {
         $city = $request->query('city', 'Madrid');
